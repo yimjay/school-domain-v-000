@@ -10,7 +10,7 @@ class School
     if @roster[grade] == nil
       @roster[grade] = []
     end
-    @roster[grade] = student
+    @roster[grade] << student
   end
   
   def grade(grade)
