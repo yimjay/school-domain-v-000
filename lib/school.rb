@@ -1,5 +1,5 @@
-def School
-  attr_reader :name, :roster
+class School
+  attr_accessor :name, :roster
   
   def initialize(name)
     @name = name
@@ -7,12 +7,10 @@ def School
   end
   
   def add_student(student, grade)
-    if @roster[grade] == nil
+    if @roster[grade] != nil
       @roster[grade] = []
-      @roster[grade] << student
-    else
-      @roster[grade] << student
     end
+    @roster[grade] << student
   end
   
   def grade(grade)
@@ -24,5 +22,4 @@ def School
       students.sort!
     end
   end
-  
 end
